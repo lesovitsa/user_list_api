@@ -11,4 +11,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  post "/users/add", to: "users#add_user"
+  delete "/users/delete", to: "users#delete_user" # This really shouldn't be post, this is a very dirty fix
+  patch "/users/update", to: "users#update_user"
+  get "/users/all", to: "users#get_all_users"
 end
