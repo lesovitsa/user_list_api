@@ -12,3 +12,7 @@ rake db:migrate
 rake db:seed
 rails server
 ```
+
+## Running tests
+
+Once you have the project completely set up, you can also run tests by using the `rspec` command
