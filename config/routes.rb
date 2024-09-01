@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   delete "/users/delete", to: "users#delete_user"
   patch "/users/update", to: "users#update_user"
   get "/users/all", to: "users#get_users"
+  get "/users/search", to: "users#search"
 end

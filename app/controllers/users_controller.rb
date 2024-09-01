@@ -53,6 +53,14 @@ class UsersController < ApplicationController
         render json: { page: @page, users: @users }, status: 200
     end
 
+    def search
+        @name = search_params["name"]
+        @users = User.where('name LIKE ?', "%#{@name}%").all
+
+        Rails.logger.info "Search completed"
+        render json: { searched_name: @name, users: @users }, status: 200
+    end
+
     private
 
     def user_params
@@ -65,5 +73,9 @@ class UsersController < ApplicationController
 
     def get_params
         params.permit(:page)
+    end
+    
+    def search_params
+        params.permit(:name)
     end
 end
