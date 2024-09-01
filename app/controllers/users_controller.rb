@@ -44,7 +44,12 @@ class UsersController < ApplicationController
     end
 
     def get_users
-        User.paginate(page: get_params["page"], per_page: 10)
+        @page = get_params["page"] ? Integer(get_params["page"]) : 1
+
+        @users = User.paginate(page: @page, per_page: 10)
+
+        Rails.logger.info "Fetched users"
+        render json: { page: @page, users: @users }, status: 200
     end
 
     private
