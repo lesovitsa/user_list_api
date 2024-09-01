@@ -43,7 +43,8 @@ class UsersController < ApplicationController
         end
     end
 
-    def get_all_users
+    def get_users
+        User.paginate(page: get_params["page"], per_page: 10)
     end
 
     private
@@ -54,5 +55,9 @@ class UsersController < ApplicationController
 
     def find_params
         params.permit(:id)
+    end
+
+    def get_params
+        params.permit(:page)
     end
 end
