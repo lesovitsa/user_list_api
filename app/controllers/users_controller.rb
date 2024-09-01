@@ -61,6 +61,12 @@ class UsersController < ApplicationController
         render json: { searched_name: @name, users: @users }, status: 200
     end
 
+    def count
+        Rails.logger.info "Fetch count"
+        @all_count = User.count
+        render json: { page_count: @all_count }, status: 200
+    end
+
     private
 
     def user_params

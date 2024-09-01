@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post "/users/add", to: "users#add_user"
   delete "/users/delete", to: "users#delete_user"
   patch "/users/update", to: "users#update_user"
-  get "/users/all", to: "users#get_users"
-  get "/users/search", to: "users#search"
+  put "/users/all", to: "users#get_users"
+  put "/users/search", to: "users#search"
+  get "/users/count", to: "users#count"
 end
