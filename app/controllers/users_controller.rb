@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    skip_before_action :verify_authenticity_token
 
     def add_user
         @user = User.create(user_params)
