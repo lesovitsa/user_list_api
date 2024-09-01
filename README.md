@@ -1,24 +1,14 @@
-# README
+## Project purpose
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a project created as practice. To be used to be a backend for https://github.com/lesovitsa/user_list_fe
 
-Things you may want to cover:
+## Starting the project
 
-* Ruby version
+To set up and start the project, you will need a running PostgreSQL server. After you have that, the following commands in this order: 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+rake db:create
+rake db:migrate
+rake db:seed
+rails server
+```
